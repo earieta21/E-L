@@ -1,0 +1,33 @@
+/* Colores.module.css */
+
+.colores {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .colores h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  .colores ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .colorItem {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+  }
+  

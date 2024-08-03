@@ -1,0 +1,178 @@
+/* Estilos generales para la Coleccion */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 1.8em;
+  color: #333;
+  margin: 0;
+}
+
+.cartButton {
+  padding: 10px 20px;
+  background-color: #ff69b4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cartButton:hover {
+  background-color: #ff1493;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #666;
+  text-align: center;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filters select {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+.filters select:focus {
+  border-color: #ff69b4;
+  outline: none;
+}
+
+.big {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  padding: 20px; /* Opcional: Añadir padding para mejor visualización */
+}
+
+.short {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+  gap: 16px; /* Espacio entre los elementos */
+}
+
+.coleccion {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%; /* Cambio de ancho para adaptarse mejor a pantallas pequeñas */
+  max-width: 400px; /* Máximo ancho para pantallas grandes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.coleccion:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  width: 100%;
+  padding-top: 100%; /* This makes the container a square */
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Imagen del producto */
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container without distorting */
+  border-radius: 10px;
+}
+
+/* Nombre del producto */
+.name {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Precio del producto */
+.price {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  color: #ff69b4;
+}
+
+/* Botón de acción */
+.button {
+  padding: 10px 20px;
+  background-color: #ff69b4;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s;
+  margin: 5px; /* Añadir margen entre botones */
+}
+
+.button:hover {
+  background-color: #ff1493;
+}
+
+/* Estilos para el botón de agregar */
+.agregar {
+  padding: 10px 20px;
+  background-color: #ff69b4; /* Cambia el color de fondo a rosa */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.agregar:hover {
+  background-color: #ff1493; /* Cambia el color de fondo al pasar el ratón a un tono más oscuro de rosa */
+}
+
+/* Media Queries para adaptabilidad */
+@media (max-width: 1200px) {
+  .short {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas para pantallas medianas */
+  }
+}
+
+@media (max-width: 768px) {
+  .short {
+    grid-template-columns: 1fr; /* Una columna para pantallas pequeñas */
+  }
+
+  .coleccion {
+    width: 100%; /* Asegura que las tarjetas ocupen todo el ancho disponible en pantallas pequeñas */
+  }
+}

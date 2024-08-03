@@ -1,0 +1,69 @@
+/* Estilos generales para la sección de testimonios */
+.testimonials {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+  
+  /* Título de la sección */
+  .testimonials h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #333;
+  }
+  
+  /* Grid de testimonios */
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Item de testimonio individual */
+  .item {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Texto del testimonio */
+  .text {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #555;
+    font-style: italic;
+  }
+  
+  /* Autor del testimonio */
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Avatar del autor */
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* Nombre del autor */
+  .name {
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+  }
+  

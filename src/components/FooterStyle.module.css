@@ -1,0 +1,78 @@
+/* Estilos generales para el footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  flex-wrap: wrap;
+}
+
+.section {
+  flex: 1;
+  margin: 10px;
+}
+
+.section h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.section p,
+.section a {
+  font-size: 1em;
+  color: #ddd;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+.section a:hover {
+  color: #ff69b4;
+}
+
+.section .socialMedia a {
+  margin-right: 10px;
+}
+
+.section .socialMedia i {
+  font-size: 1.5em;
+  color: #ddd;
+  transition: color 0.3s;
+}
+
+.section .socialMedia i:hover {
+  color: #ff69b4;
+}
+
+/* Estilos para los iconos de redes sociales */
+.icono-facebook::before {
+  content: '\f09a';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.icono-instagram::before {
+  content: '\f16d';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.icono-twitter::before {
+  content: '\f099';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+/* Derechos de autor */
+.bottom {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #222;
+  color: #bbb;
+  border-top: 1px solid #444;
+}
+
+.bottom p {
+  margin: 0;
+  font-size: 1em;
+}

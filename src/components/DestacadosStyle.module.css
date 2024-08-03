@@ -1,0 +1,179 @@
+/* Estilos generales para la sección de productos */
+.products {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  position: relative;
+  width: 100%;
+}
+
+/* Título de la sección */
+.products h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #333;
+}
+
+/* Contenedor del scroll con botones */
+.scroll {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+/* Botones de desplazamiento */
+.buttonScroller {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.buttonScroller:hover {
+  background-color: #f0f0f0;
+}
+
+.buttonScroller svg {
+  width: 24px;
+  height: 24px;
+  fill: #333;
+}
+
+.buttonScroller.left {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+.buttonScroller.right {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+/* Estilos para ocultar texto visualmente pero mantenerlo accesible */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.containerWrapper {
+  overflow-x: auto;
+  width: 100%;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Ocultar scrollbar en Firefox */
+}
+
+/* Contenedor con overflow scroll oculto */
+.container {
+  width: max-content;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.containerWrapper::-webkit-scrollbar {
+  display: none; /* Ocultar scrollbar en Chrome, Safari y Opera */
+}
+
+/* Item de producto individual */
+.item {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 400px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Envoltorio de imagen del producto */
+.imageWrapper {
+  width: 100%;
+  padding-top: 100%; /* Relación de aspecto 1:1 */
+  position: relative;
+  margin-bottom: 15px;
+  transition: transform 3s ease-in-out;
+}
+
+/* Imagen del producto */
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+}
+
+/* Nombre del producto */
+.name {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Precio del producto */
+.price {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  color: #ff69b4;
+}
+
+/* Botón de acción */
+.button {
+  padding: 10px 20px;
+  background-color: #ff69b4;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s;
+  margin: 5px; /* Añadir margen entre botones */
+}
+
+.button:hover {
+  background-color: #ff1493;
+}
+
+/* Estilos para el botón de agregar */
+.agregar {
+  padding: 10px 20px;
+  background-color: #ff69b4; /* Cambia el color de fondo a rosa */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.agregar:hover {
+  background-color: #ff1493; /* Cambia el color de fondo al pasar el ratón a un tono más oscuro de rosa */
+}

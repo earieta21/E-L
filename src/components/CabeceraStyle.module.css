@@ -1,0 +1,83 @@
+/* Estilos para la Barra de Anuncios Especiales */
+.top {
+  background-color: #f8e1e7;
+  text-align: center;
+  padding: 10px 0;
+  margin-right: 0;
+}
+
+/* Estilos generales para el header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+/* Logo */
+.logo {
+  flex: 0 1 auto;
+}
+
+.logo img {
+  max-height: 50px;
+}
+
+/* Navbar */
+.navbar {
+  flex: 1;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Icono del carrito */
+.cart {
+  display: flex;
+  align-items: center;
+}
+
+.cartButton {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+.cart .icono {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart .count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #ff69b4;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8em;
+  font-weight: bold;
+}

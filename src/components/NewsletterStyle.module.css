@@ -1,0 +1,53 @@
+/* Estilos generales para la sección de newsletter */
+.newsletter {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  /* Título de la sección */
+  .newsletter h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #333;
+  }
+  
+  /* Descripción breve */
+  .newsletter p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #666;
+  }
+  
+  /* Formulario de suscripción */
+  .form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .form input[type="email"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+  }
+  
+  .form button {
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .form button:hover {
+    background-color: #ff1493;
+  }
+  

@@ -1,0 +1,71 @@
+/* Estilos generales para la sección de contacto */
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+  
+  /* Título de la sección */
+  .contact h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #333;
+  }
+  
+  /* Información de contacto */
+  .info p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  /* Formulario de contacto */
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .form label {
+    font-size: 1em;
+    color: #333;
+    text-align: left;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .form input,
+  .form textarea {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #ff1493;
+  }
+  
+  /* Mapa opcional */
+  .map {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
