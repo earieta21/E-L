@@ -86,6 +86,7 @@
   gap: 20px;
   overflow-x: auto;
   padding: 10px 0;
+  transition: transform 0.5 ease-in-out;
 }
 
 .containerWrapper::-webkit-scrollbar {
@@ -151,11 +152,11 @@
   padding: 10px 20px;
   background-color: #ff69b4;
   color: #fff;
-  text-decoration: none;
+  border: none;
   border-radius: 5px;
   font-size: 1em;
   transition: background-color 0.3s;
-  margin: 5px; /* Añadir margen entre botones */
+  margin: 5px;
 }
 
 .button:hover {

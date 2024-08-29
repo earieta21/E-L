@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Style from './DestacadosStyle.module.css';
 import ProductDetails from './Productos/ProductDetails';
 import { lenceria } from '../Lenceria';
 
 const Destacados = ({ addToCart, abrirCarrito, carrito }) => {
   const [modalState, setModalState] = useState({ show: false, product: null });
-
+  const [currentIndex, setCurrentIndex] = useState(0);  // Added state for the current image index
+  const itemsToDisplay = lenceria.slice(0, 6);  // Slice the first 6 items from the lenceria array
+  
   const abrir = (product) => {
     setModalState({ show: true, product });
   };
@@ -14,7 +16,7 @@ const Destacados = ({ addToCart, abrirCarrito, carrito }) => {
     setModalState({ show: false, product: null });
   };
 
-  const itemsToDisplay = lenceria.slice(0, 6);
+  
 
   return (
     <div>
@@ -39,7 +41,7 @@ const Destacados = ({ addToCart, abrirCarrito, carrito }) => {
         </div>
       </section>
       {modalState.show && (
-        <ProductDetails product={modalState.product} cerrar={cerrar} addToCart={addToCart}/>
+        <ProductDetails product={modalState.product} cerrar={cerrar} addToCart={addToCart} />
       )}
     </div>
   );

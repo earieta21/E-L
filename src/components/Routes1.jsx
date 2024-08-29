@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Coleccion from './Productos/Coleccion';
-import SobreNosotros from './SobreNosotros';
-import Error from './Productos/Error';
 import Inicio from './Inicio';
 import Cabecera from './Cabecera';
 import Contacto from './Contacto';
-import Blog from './Blog';
 import MiCuenta from './MiCuenta';
-import Carrito from '../Carro/Carrito';
+import Style from './Routes1.module.css'
+import Cart from '../Carro/Cart1';
 
 const Routes1 = () => {
   const [carrito, setCarrito] = useState([]);
-  const [carritoVisible, setCarritoVisible] = useState(false);
 
   useEffect(() => {
     const carritoGuardado = localStorage.getItem('carrito');
@@ -25,8 +22,8 @@ const Routes1 = () => {
     localStorage.setItem('carrito', JSON.stringify(carrito));
   }, [carrito]);
 
-  const abrirCarrito = () => setCarritoVisible(true);
-  const cerrarCarrito = () => setCarritoVisible(false);
+  {/*const abrirCarrito = () => setCarritoVisible(true);
+const cerrarCarrito = () => setCarritoVisible(false);*/}
 
   const addToCart = (product) => {
     const newCart = [...carrito];
@@ -55,17 +52,18 @@ const Routes1 = () => {
     });
     setCarrito(newCart);
   };
-
+  
   const checkOut = () => {
     if (carrito.length === 0) {
       alert('El carrito se encuentra vacío. Agrega productos para poder proceder con la compra');
       return;
     }
-
+  
     const total = carrito.reduce((sum, item) => sum + item.quantity * parseFloat(item.precio.replace('$', '')), 0);
+    
     alert(`Compra realizada con éxito! Total $${total.toFixed(2)}`);
+    
     setCarrito([]);
-    cerrarCarrito();
   };
 
   const totalProductosEnCarrito = () => {
@@ -74,19 +72,23 @@ const Routes1 = () => {
 
   return (
     <BrowserRouter>
-      <Cabecera abrirCarrito={abrirCarrito} totalProductosEnCarrito={totalProductosEnCarrito} />
-      <div className='cuerpo'>
+      <Cabecera totalProductosEnCarrito={totalProductosEnCarrito} />
+      <div className={Style.cuerpo}>
         <Routes>
-          <Route path='/' element={<Inicio abrirCarrito={abrirCarrito} addToCart={addToCart} carrito={carrito} />} />
-          <Route path='/Inicio' element={<Inicio />} />
-          <Route path='/Coleccion' element={<Coleccion abrirCarrito={abrirCarrito} addToCart={addToCart} carrito={carrito} />} />
-          <Route path='/Sobre-Nosotros' element={<SobreNosotros />} />
+          <Route path='/' element={<Inicio addToCart={addToCart} carrito={carrito}/>} />
+          <Route path='/Inicio' element={<Inicio/>} />
+          <Route path='/Coleccion' element={<Coleccion addToCart={addToCart} carrito={carrito} />} /> 
           <Route path='/Contacto' element={<Contacto />} />
-          <Route path='/Blog' element={<Blog />} />
           <Route path='/Mi-Cuenta' element={<MiCuenta />} />
-          <Route path='/Carrito' element={<Carrito carrito={carrito} cerrarCarrito={cerrarCarrito} removeFromCart={removeFromCart} updateCartQuantity={updateCartQuantity} checkOut={checkOut} />} />
+          <Route path='/Carrito' element={<Cart
+            carrito = {carrito}
+            updateCartQuantity = {updateCartQuantity}
+            addToCart = {addToCart}
+            removeFromCart = {removeFromCart}
+            checkOut= {checkOut}/>}
+             />
         </Routes>
-        {carritoVisible && (
+        {/*{carritoVisible && (
           <Carrito 
             carrito={carrito} 
             cerrarCarrito={cerrarCarrito}
@@ -94,7 +96,7 @@ const Routes1 = () => {
             updateCartQuantity={updateCartQuantity}
             checkOut={checkOut}
           />
-        )}
+        )}*/}
       </div>
     </BrowserRouter>
   );

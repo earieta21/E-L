@@ -68,6 +68,8 @@ p {
 
 .big {
   display: flex;
+  height: 100vh;
+  width: 80%;
   justify-content: center; /* Centra horizontalmente */
   padding: 20px; /* Opcional: Añadir padding para mejor visualización */
 }

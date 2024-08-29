@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../assets copy/Logo.jpg';
 import { FaShoppingCart } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import Style from './CabeceraStyle.module.css';
 
@@ -23,23 +24,15 @@ const Cabecera = ({ abrirCarrito, totalProductosEnCarrito }) => {
               <li>
                 <NavLink to='/Coleccion'>Colección</NavLink>
               </li>
-              <li>
-                <NavLink to='/Sobre-Nosotros'>Sobre Nosotros</NavLink>
-              </li>
-              <li>
+              <li className={Style.desktop}>
                 <NavLink to='/contacto'>Contacto</NavLink>
               </li>
-              <li>
-                <NavLink to='/blog'>Blog</NavLink>
-              </li>
-              <li>
-                <NavLink to='/mi-cuenta'>Mi Cuenta</NavLink>
+              <li className={Style.user}>
+                <NavLink to='/mi-cuenta'><FaUser className={Style.userIcon}/></NavLink>
               </li>
               <li className={Style.cart}>
-                <button onClick={abrirCarrito} className={Style.cartButton}>
-                  <FaShoppingCart />
+                  <NavLink to='carrito'><FaShoppingCart className={Style.cart} /></NavLink>
                   <span className={Style.cartCount}>{totalProductosEnCarrito()}</span>
-                </button>
               </li>
             </ul>
           </nav>

@@ -48,6 +48,25 @@
   font-weight: bold;
 }
 
+.desktop{
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px){
+  .desktop{
+    display: none;
+  }
+}
+
+.user{
+  display: flex;
+  align-items: center;
+}
+
+.userIcon {
+  font-size: 1.5em;
+  color: #333;
+}
 /* Icono del carrito */
 .cart {
   display: flex;
