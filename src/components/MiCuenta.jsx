@@ -6,9 +6,11 @@ const MiCuenta = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [view, setView] = useState("login");
+  const [view, setView] = useState("login"); // 'login', 'register', 'profile'
 
+  // Verificar si el usuario está autenticado
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -17,6 +19,7 @@ const MiCuenta = () => {
     }
   }, []);
 
+  // Manejo del formulario de registro
   const handleRegister = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
@@ -48,6 +51,7 @@ const MiCuenta = () => {
     }
   };
 
+  // Manejo del formulario de inicio de sesión
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -74,12 +78,14 @@ const MiCuenta = () => {
     }
   };
 
+  // Cerrar sesión
   const handleLogout = () => {
     localStorage.removeItem("token");
     setIsAuthenticated(false);
     setView("login");
   };
 
+  // Mostrar contenido según el estado
   if (view === "profile") {
     return (
       <div className={Style.cuenta}>
@@ -120,7 +126,7 @@ const MiCuenta = () => {
             <div className={Style.form}>
               <label htmlFor="password">Contraseña:</label>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 id="password"
                 name="password"
                 value={password}
@@ -131,15 +137,29 @@ const MiCuenta = () => {
             <div className={Style.form}>
               <label htmlFor="confirmPassword">Confirmar Contraseña:</label>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 id="confirmPassword"
                 name="confirmPassword"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
               />
+              {password && confirmPassword && password !== confirmPassword && (
+                <p className={Style.error}>Las contraseñas no coinciden</p>
+              )}
             </div>
-            <button type="submit">Crear Cuenta</button>
+            <div className={Style.form}>
+              <input
+                type="checkbox"
+                id="showPassword"
+                checked={showPassword}
+                onChange={() => setShowPassword(!showPassword)}
+              />
+              <label htmlFor="showPassword">Mostrar Contraseña</label>
+            </div>
+            <button type="submit" disabled={password !== confirmPassword}>
+              Crear Cuenta
+            </button>
             <button type="button" onClick={() => setView("login")}>
               Ya tengo cuenta
             </button>
@@ -163,13 +183,22 @@ const MiCuenta = () => {
             <div className={Style.form}>
               <label htmlFor="password">Contraseña:</label>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 id="password"
                 name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
+            </div>
+            <div className={Style.form}>
+              <input
+                type="checkbox"
+                id="showPassword"
+                checked={showPassword}
+                onChange={() => setShowPassword(!showPassword)}
+              />
+              <label htmlFor="showPassword">Mostrar Contraseña</label>
             </div>
             <button type="submit">Iniciar Sesión</button>
             <button type="button" onClick={() => setView("register")}>
