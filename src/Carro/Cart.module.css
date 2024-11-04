@@ -1,21 +1,41 @@
-/* Estilos generales */
+/* Variables for colors */
+:root {
+    --primary-color: #ff69b4;
+    --primary-hover-color: #ff1493;
+    --disabled-color: #ccc;
+    --text-color: #333;
+    --background-color: #f9f9f9;
+    --card-background: #fff;
+    --border-color: #ddd;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --box-shadow-hover-color: rgba(0, 0, 0, 0.2);
+}
+
+/* General Styles */
 .body {
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  .h1 {
+    font-family: Arial, sans-serif;
+}
+
+.h1 {
     text-align: center;
     font-size: 2.5em;
-    color: #333;
+    color: var(--text-color);
     margin-bottom: 20px;
-  }
-  
-  /* Botones generales */
-  .button {
-    background-color: #ff69b4;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente (opcional) */
+    height: 100%; /* Opcional, si deseas centrar verticalmente dentro de un contenedor con altura fija */
+}
+
+.button {
+    background-color: var(--primary-color);
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -24,81 +44,111 @@
     cursor: pointer;
     transition: background-color 0.3s;
     margin: 10px 0;
-    display: inline-block;
-  }
-  
-  .button:hover {
-    background-color: #ff1493;
-  }
-  
-  /* Estilos del carrito vacío */
-  .button:disabled {
-    background-color: #ccc;
+}
+
+.button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.button:disabled {
+    background-color: var(--disabled-color);
     cursor: not-allowed;
-  }
-  
-  /* Listado de productos en el carrito */
-  ul {
+}
+
+/* Product List in Cart */
+ul {
     list-style: none;
     padding: 0;
-  }
-  
-  .item {
-    display: flex;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
     align-items: center;
-    justify-content: space-between;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    max-width: 700px;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px var(--box-shadow-color);
     transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .item:hover {
+}
+
+.item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Contenedor para la imagen del producto */
-  .img {
-    width: 100px;
-    height: 100px;
+    box-shadow: 0 8px 16px var(--box-shadow-hover-color);
+}
+
+/* Product Image Container */
+.img {
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     border-radius: 10px;
     margin-right: 20px;
-  }
-  
-  /* Contenedor de detalles del producto */
-  .cardholder {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .cardholder h3 {
+}
+
+/* Product Details Container */
+.cardholder {
+    text-align: right;
+    justify-self: end; /* Align the cardholder to the right column */
+}
+
+.cardholder h3 {
     font-size: 1.2em;
     margin: 5px 0;
-  }
-  
-  /* Input de cantidad */
-  input[type="number"] {
+}
+
+/* Quantity Input */
+input[type="number"] {
     width: 60px;
     padding: 5px;
     font-size: 1em;
     margin-right: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     text-align: center;
-  }
-  
-  /* Botón de eliminar */
-  button.button {
-    background-color: #ff6961;
-  }
-  
-  button.button:hover {
-    background-color: #ff4c4c;
-  }
-  
+}
+
+.buttons {
+    border: #333;
+}
+
+/* Delete Button */
+button.button {
+    background-color: var(--primary-hover-color);
+}
+
+button.button:hover {
+    background-color: #ff007f; /* Adjust hover color as needed */
+}
+
+/* Accessibility Focus Styles */
+.button:focus,
+input[type="number"]:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .item {
+        grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
+    }
+
+    .img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .cardholder {
+        text-align: center;
+        justify-self: center;
+    }
+
+    input[type="number"] {
+        width: 50px;
+    }
+}
