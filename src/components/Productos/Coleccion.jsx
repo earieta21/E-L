@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import Style from './ColeccionStyle.module.css';
-import { lenceria } from '../../Lenceria';
-import ProductDetails from './ProductDetails';
+import React, { useState } from "react";
+import Style from "./ColeccionStyle.module.css";
+import { lenceria } from "../../Lenceria";
+import ProductDetails from "./ProductDetails";
 
-const Coleccion = ({ abrirCarrito, addToCart, carrito }) => {
+const Coleccion = ({ abrirCarrito, addToCart, carrito, buyNow }) => {
   const [modalState, setModalState] = useState({ show: false, product: null });
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState("all");
 
   const abrir = (product) => {
     setModalState({ show: true, product });
@@ -23,11 +23,19 @@ const Coleccion = ({ abrirCarrito, addToCart, carrito }) => {
     let filteredProducts = [...lenceria];
 
     switch (filter) {
-      case 'price-asc':
-        filteredProducts = filteredProducts.sort((a, b) => parseFloat(a.precio.replace('$', '')) - parseFloat(b.precio.replace('$', '')));
+      case "price-asc":
+        filteredProducts = filteredProducts.sort(
+          (a, b) =>
+            parseFloat(a.precio.replace("$", "")) -
+            parseFloat(b.precio.replace("$", ""))
+        );
         break;
-      case 'price-desc':
-        filteredProducts = filteredProducts.sort((a, b) => parseFloat(b.precio.replace('$', '')) - parseFloat(a.precio.replace('$', '')));
+      case "price-desc":
+        filteredProducts = filteredProducts.sort(
+          (a, b) =>
+            parseFloat(b.precio.replace("$", "")) -
+            parseFloat(a.precio.replace("$", ""))
+        );
         break;
       default:
         break;
@@ -46,7 +54,10 @@ const Coleccion = ({ abrirCarrito, addToCart, carrito }) => {
       </header>
       <section>
         <h2>Nuestra Colección</h2>
-        <p>Explora nuestra última colección de lencería diseñada para realzar tu belleza y comodidad.</p>
+        <p>
+          Explora nuestra última colección de lencería diseñada para realzar tu
+          belleza y comodidad.
+        </p>
         <div className={Style.filters}>
           <select value={filter} onChange={handleFilterChange}>
             <option value="all">Todos</option>
@@ -59,19 +70,39 @@ const Coleccion = ({ abrirCarrito, addToCart, carrito }) => {
             {filteredProducts.map((producto, index) => (
               <div className={Style.coleccion} key={index}>
                 <div className={Style.container}>
-                  <img src={producto.img} alt={producto.nombre} className={Style.image}/>
+                  <img
+                    src={producto.img}
+                    alt={producto.nombre}
+                    className={Style.image}
+                  />
                 </div>
                 <h3 className={Style.name}>{producto.nombre}</h3>
                 <p className={Style.price}>{producto.precio}</p>
-                <a href="#" className={Style.button} onClick={() => abrir(producto)}>Ver más</a>
-                <button className={Style.agregar} onClick={() => addToCart(producto)}>Agregar al Carrito</button>
+                <a
+                  href="#"
+                  className={Style.button}
+                  onClick={() => abrir(producto)}
+                >
+                  Ver más
+                </a>
+                <button
+                  className={Style.agregar}
+                  onClick={() => addToCart(producto)}
+                >
+                  Agregar al Carrito
+                </button>
               </div>
             ))}
           </div>
         </div>
       </section>
       {modalState.show && (
-        <ProductDetails product={modalState.product} cerrar={cerrar} addToCart={addToCart} />
+        <ProductDetails
+          product={modalState.product}
+          cerrar={cerrar}
+          addToCart={addToCart}
+          buyNow={buyNow}
+        />
       )}
     </div>
   );

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Style from '../Carro/Cart.module.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import Style from "../Carro/Cart.module.css";
 
-const Cart = ({carrito, removeFromCart, updateCartQuantity, checkOut }) => {
+const Cart = ({ carrito, removeFromCart, updateCartQuantity, checkOut }) => {
   const navigate = useNavigate();
 
   const handleQuantityChange = (productId, quantity) => {
@@ -14,45 +14,63 @@ const Cart = ({carrito, removeFromCart, updateCartQuantity, checkOut }) => {
   };
 
   const goToColeccion = () => {
-    navigate('/Coleccion');
+    navigate("/Coleccion");
   };
-
-  const Wishlist = () => {
-    
-  }
 
   return (
     <div className={Style.body}>
-      <h1 className={Style.h1}>Tu Carrito</h1>
+      <h1 className={Style.title}>Tu Carrito</h1>
+
       {carrito.length === 0 ? (
-        <><div className={Style.container}>
-          <button onClick={goToColeccion} className={Style.button}>Comprar Ahora</button>    
-        </div></> 
+        <div className={Style.empty}>
+          <p>Tu carrito está vacío.</p>
+          <button onClick={goToColeccion} className={Style.primaryButton}>
+            Ir a la Colección
+          </button>
+        </div>
       ) : (
         <>
-          <div className={Style.container}>
-            <button onClick={checkOut} className={Style.button}>Check Out</button>
+          <div className={Style.actions}>
+            <button onClick={checkOut} className={Style.primaryButton}>
+              Finalizar Compra
+            </button>
           </div>
-          <ul>
-            {carrito.map((producto, index) => (
-              <li key={index} className={Style.item}>
+
+          <ul className={Style.productList}>
+            {carrito.map((producto) => (
+              <li key={producto.id} className={Style.item}>
                 <div className={Style.imgContainer}>
-                  <img src={producto.img} alt={producto.nombre} className={Style.img}/>
+                  <img
+                    src={producto.img}
+                    alt={producto.nombre}
+                    className={Style.img}
+                  />
                 </div>
-                <div className={Style.cardholder}>
-                  <h3>{producto.nombre}</h3>
-                  <h3>{producto.precio}</h3>
+                <div className={Style.details}>
+                  <h3 className={Style.name}>{producto.nombre}</h3>
+                  <p className={Style.price}>{producto.precio}</p>
                   <input
                     type="number"
                     value={producto.quantity}
                     min="1"
+                    className={Style.quantity}
                     onChange={(e) =>
-                      handleQuantityChange(producto.id, parseInt(e.target.value))
+                      handleQuantityChange(
+                        producto.id,
+                        parseInt(e.target.value)
+                      )
                     }
                   />
-                  <div className={Style.buttons}>
-                    <button onClick={() => removeFromCart(producto.id)} className={Style.button}>Eliminar</button>
-                    <button className={Style.button}>Add to Wishlist</button>
+                  <div className={Style.buttonGroup}>
+                    <button
+                      onClick={() => removeFromCart(producto.id)}
+                      className={Style.secondaryButton}
+                    >
+                      Eliminar
+                    </button>
+                    <button className={Style.wishlistButton}>
+                      Añadir a Wishlist
+                    </button>
                   </div>
                 </div>
               </li>
@@ -65,4 +83,3 @@ const Cart = ({carrito, removeFromCart, updateCartQuantity, checkOut }) => {
 };
 
 export default Cart;
-

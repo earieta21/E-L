@@ -1,53 +1,78 @@
-/* Estilos generales para la sección de newsletter */
+/* Sección principal */
 .newsletter {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #fff;
-  }
-  
-  /* Título de la sección */
-  .newsletter h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    color: #333;
-  }
-  
-  /* Descripción breve */
-  .newsletter p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    color: #666;
-  }
-  
-  /* Formulario de suscripción */
+  background-color: #fff0f5;
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 1px solid #f2d4e2;
+}
+
+/* Título */
+.newsletter h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  color: #333;
+}
+
+/* Descripción */
+.newsletter p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+}
+
+/* Formulario */
+.form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Input */
+.form input[type="email"] {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  width: 300px;
+  max-width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.form input[type="email"]:focus {
+  border-color: #d63384;
+  outline: none;
+}
+
+/* Botón */
+.form button {
+  background-color: #d63384;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #b82a6e;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
   .form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .form input[type="email"] {
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 250px;
-  }
-  
+
+  .form input,
   .form button {
-    padding: 10px 20px;
-    background-color: #ff69b4;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    width: 100%;
   }
-  
-  .form button:hover {
-    background-color: #ff1493;
-  }
-  
+}

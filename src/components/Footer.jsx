@@ -1,42 +1,59 @@
-import React from 'react';
-import Style from './FooterStyle.module.css';
-import { FaInstagram, FaFacebook, FaTwitter } from 'react-icons/fa';
+import React from "react";
+import Style from "./FooterStyle.module.css";
+import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div>
-        <footer>
-            <div className={Style.footer}>
-                {/* -- Información de la Empresa -- */}
-                <div className={Style.section}>
-                    <h3>E&L Pleasure</h3>
-                    <p>La mejor lencería para sentirte especial todos los días.</p>
-                </div>
+    <footer className={Style.footer}>
+      <div className={Style.container}>
+        {/* Empresa */}
+        <div className={Style.section}>
+          <h3>E&L Pleasure</h3>
+          <p>La mejor lencería para sentirte especial todos los días.</p>
+        </div>
 
-                {/* -- Iconos de Redes Sociales -- */}
-                <div className={Style.section + ' ' + Style.socialMedia}>
-                    <h3>Síguenos</h3>
-                    <a href=""><i className="icono-facebook"><FaFacebook /></i></a>
-                    <a href="https://www.instagram.com/_eyl_pleasure/"><i className="icono-instagram"><FaInstagram /></i></a>
-                    <a href="https://twitter.com/tu-perfil"><i className="icono-twitter"><FaTwitter /></i></a>
-                </div>
+        {/* Redes Sociales */}
+        <div className={`${Style.section} ${Style.socialMedia}`}>
+          <h3>Síguenos</h3>
+          <div className={Style.icons}>
+            <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+              <FaFacebook />
+            </a>
+            <a
+              href="https://www.instagram.com/_eyl_pleasure/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaInstagram />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noreferrer">
+              <FaTwitter />
+            </a>
+          </div>
+        </div>
 
-                {/* -- Información de Contacto -- */}
-                <div className={Style.section}>
-                    <h3>Contacto</h3>
-                    <p>Email: <a href="mailto:eylpleasure@gmail.com">eylpleasure@gmail.com</a></p>
-                    <p>Teléfono: +1 310 977 0612</p>
-                    <p>Dirección: Calle Ignacio Zaragoza 9na, número 8510-A, Zona Centro, 22000 Tijuana, B.C., Mexico</p>
-                </div>
-            </div>
+        {/* Contacto */}
+        <div className={Style.section}>
+          <h3>Contacto</h3>
+          <p>
+            <strong>Email:</strong>{" "}
+            <a href="mailto:eylpleasure@gmail.com">eylpleasure@gmail.com</a>
+          </p>
+          <p>
+            <strong>Teléfono:</strong> +1 310 977 0612
+          </p>
+          <p>
+            <strong>Dirección:</strong> Calle Ignacio Zaragoza 9na, número
+            8510-A, Zona Centro, 22000 Tijuana, B.C., México
+          </p>
+        </div>
+      </div>
 
-            {/* -- Derechos de Autor -- */}
-            <div className={Style.bottom}>
-                <p>&copy; 2024 E&L Pleasure. Todos los derechos reservados.</p>
-            </div>
-        </footer>
-    </div>
+      <div className={Style.bottom}>
+        <p>&copy; 2024 E&L Pleasure. Todos los derechos reservados.</p>
+      </div>
+    </footer>
   );
-}
+};
 
 export default Footer;

@@ -1,34 +1,63 @@
-/* TouchStyle.module.css */
-
+/* Contenedor general */
 .productDetails {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #fef2f6;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+/* Ítems de sección (Tallas, Colores, Opiniones) */
 .detailItem {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   cursor: pointer;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  padding: 12px 16px;
+  border: 1px solid #ffd8e6;
+  border-radius: 8px;
   background-color: #fff;
-  transition: background-color 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
 }
 
 .detailItem:hover {
-  background-color: #f0f0f0;
+  background-color: #ffe3ee;
 }
 
+/* Título de cada ítem */
 .detailItem h4 {
   margin: 0;
-  font-size: 1.2em;
-  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #d63384;
+  display: flex;
+  align-items: center;
 }
 
+/* Flechas de expandir/contraer */
+.icon {
+  margin-left: 10px;
+  font-size: 0.9rem;
+  color: #d63384;
+}
+
+/* Contenido expandido */
 .section {
+  background-color: #fff0f5;
+  border-radius: 8px;
+  padding: 10px 16px;
   margin-bottom: 20px;
+  animation: fadeIn 0.3s ease;
 }
 
-
+/* Animación suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

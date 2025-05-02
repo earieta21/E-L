@@ -7,20 +7,23 @@ import Footer from "./Footer";
 
 const Inicio = ({ addToCart, abrirCarrito }) => {
   return (
-    <div>
-      <div>
-        <br />
-        <HeroSection />
-        <br />
+    <main>
+      <HeroSection />
+
+      <section style={{ margin: "60px 0" }}>
         <Destacados addToCart={addToCart} abrirCarrito={abrirCarrito} />
-        <br />
+      </section>
+
+      <section style={{ backgroundColor: "#fef2f4", padding: "60px 0" }}>
         <SobreNosotros />
-        <br />
+      </section>
+
+      <section style={{ margin: "60px 0" }}>
         <Newsletter />
-        <br />
-        <Footer />
-      </div>
-    </div>
+      </section>
+
+      <Footer />
+    </main>
   );
 };
 

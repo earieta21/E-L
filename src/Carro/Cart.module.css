@@ -1,154 +1,177 @@
-/* Variables for colors */
 :root {
-    --primary-color: #ff69b4;
-    --primary-hover-color: #ff1493;
-    --disabled-color: #ccc;
-    --text-color: #333;
-    --background-color: #f9f9f9;
-    --card-background: #fff;
-    --border-color: #ddd;
-    --box-shadow-color: rgba(0, 0, 0, 0.1);
-    --box-shadow-hover-color: rgba(0, 0, 0, 0.2);
+  --primary-color: #ff69b4;
+  --primary-hover-color: #ff1493;
+  --wishlist-color: #e5e5e5;
+  --wishlist-hover-color: #ddd;
+  --disabled-color: #ccc;
+  --text-color: #333;
+  --background-color: #f9f9f9;
+  --card-background: #fff;
+  --border-color: #ddd;
+  --box-shadow-color: rgba(0, 0, 0, 0.05);
+  --box-shadow-hover-color: rgba(0, 0, 0, 0.15);
 }
 
-/* General Styles */
 .body {
-    padding: 20px;
-    background-color: var(--background-color);
-    max-width: 1200px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
+  padding: 30px 20px;
+  background-color: var(--background-color);
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Arial", sans-serif;
 }
 
-.h1 {
-    text-align: center;
-    font-size: 2.5em;
-    color: var(--text-color);
-    margin-bottom: 20px;
+.title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--text-color);
+  margin-bottom: 30px;
 }
 
-.container {
-    display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center; /* Centra el contenido verticalmente (opcional) */
-    height: 100%; /* Opcional, si deseas centrar verticalmente dentro de un contenedor con altura fija */
+/* Carrito vacío */
+.empty {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1.1rem;
 }
 
-.button {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin: 10px 0;
+/* Botones principales */
+.primaryButton {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.button:hover {
-    background-color: var(--primary-hover-color);
+.primaryButton:hover {
+  background-color: var(--primary-hover-color);
 }
 
-.button:disabled {
-    background-color: var(--disabled-color);
-    cursor: not-allowed;
+.secondaryButton {
+  background-color: var(--primary-hover-color);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
 }
 
-/* Product List in Cart */
-ul {
-    list-style: none;
-    padding: 0;
+.secondaryButton:hover {
+  background-color: #ff007f;
+}
+
+.wishlistButton {
+  background-color: var(--wishlist-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.wishlistButton:hover {
+  background-color: var(--wishlist-hover-color);
+}
+
+/* Lista de productos */
+.productList {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
 }
 
 .item {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    align-items: center;
-    max-width: 700px;
-    background-color: var(--card-background);
-    border: 1px solid var(--border-color);
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px var(--box-shadow-color);
-    transition: transform 0.3s, box-shadow 0.3s;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--box-shadow-color);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px var(--box-shadow-hover-color);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--box-shadow-hover-color);
 }
 
-/* Product Image Container */
+.imgContainer {
+  display: flex;
+  justify-content: center;
+}
+
 .img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-right: 20px;
+  width: 230px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-/* Product Details Container */
-.cardholder {
-    text-align: right;
-    justify-self: end; /* Align the cardholder to the right column */
+/* Detalles del producto */
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
 }
 
-.cardholder h3 {
-    font-size: 1.2em;
-    margin: 5px 0;
+.name {
+  font-size: 1.2rem;
+  margin: 8px 0;
 }
 
-/* Quantity Input */
-input[type="number"] {
-    width: 60px;
-    padding: 5px;
-    font-size: 1em;
-    margin-right: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    text-align: center;
+.price {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-bottom: 12px;
 }
 
-.buttons {
-    border: #333;
+.quantity {
+  width: 60px;
+  padding: 6px;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-/* Delete Button */
-button.button {
-    background-color: var(--primary-hover-color);
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-button.button:hover {
-    background-color: #ff007f; /* Adjust hover color as needed */
-}
-
-/* Accessibility Focus Styles */
-.button:focus,
-input[type="number"]:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-    .item {
-        grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
-    }
+  .item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
-    .img {
-        width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-    }
+  .details {
+    align-items: center;
+    text-align: center;
+  }
 
-    .cardholder {
-        text-align: center;
-        justify-self: center;
-    }
+  .img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
 
-    input[type="number"] {
-        width: 50px;
-    }
+  .quantity {
+    width: 50px;
+  }
 }

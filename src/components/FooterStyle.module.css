@@ -1,28 +1,37 @@
-/* Estilos generales para el footer */
+/* Estilos generales */
 .footer {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #333;
+  background-color: #111;
   color: #fff;
-  flex-wrap: wrap;
+  padding: 50px 20px 20px;
+  font-size: 0.95rem;
 }
 
+/* Contenedor general */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Secciones */
 .section {
-  flex: 1;
-  margin: 10px;
+  flex: 1 1 300px;
 }
 
 .section h3 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #ff69b4;
 }
 
 .section p,
 .section a {
-  font-size: 1em;
   color: #ddd;
-  margin-bottom: 5px;
+  line-height: 1.6;
+  font-size: 1rem;
   text-decoration: none;
 }
 
@@ -30,49 +39,42 @@
   color: #ff69b4;
 }
 
-.section .socialMedia a {
-  margin-right: 10px;
+/* Redes sociales */
+.socialMedia .icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
 }
 
-.section .socialMedia i {
-  font-size: 1.5em;
-  color: #ddd;
-  transition: color 0.3s;
-}
-
-.section .socialMedia i:hover {
+.socialMedia a {
+  font-size: 1.5rem;
   color: #ff69b4;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Estilos para los iconos de redes sociales */
-.icono-facebook::before {
-  content: '\f09a';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
+.socialMedia a:hover {
+  transform: scale(1.1);
+  color: #fff;
 }
 
-.icono-instagram::before {
-  content: '\f16d';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-}
-
-.icono-twitter::before {
-  content: '\f099';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-}
-
-/* Derechos de autor */
+/* Línea inferior */
 .bottom {
   text-align: center;
-  padding: 10px 0;
-  background-color: #222;
-  color: #bbb;
-  border-top: 1px solid #444;
+  padding-top: 30px;
+  border-top: 1px solid #333;
+  font-size: 0.85rem;
+  color: #aaa;
 }
 
-.bottom p {
-  margin: 0;
-  font-size: 1em;
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .socialMedia .icons {
+    justify-content: center;
+  }
 }

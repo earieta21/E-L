@@ -2,6 +2,7 @@ import React from "react";
 import Style from "./HeroSectionStyle.module.css";
 import img5 from "../assets copy/img8.jpg";
 import { NavLink } from "react-router-dom";
+
 const HeroSection = () => {
   return (
     <section className={Style.hero}>
